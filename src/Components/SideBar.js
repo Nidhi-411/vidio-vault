@@ -9,7 +9,7 @@ const SideBar = ()=>{
     if(!isMenuOpen) return null ; // early return
 
     return(
-        <div className="border border-l-gray-400 shadow-lg w-44">
+        <div className="p-2 border border-l-gray-400 shadow-lg ">
             
             <ul className="pt-2">
                 <li>Home</li>

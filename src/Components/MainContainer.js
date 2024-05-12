@@ -1,8 +1,10 @@
 import ButtonList from "./ButtonList";
+import VidioContainer from "./VidioContainer";
 const MainContainer = ()=>{
     return(
         <div>
-            <ButtonList/> 
+          <ButtonList/> 
+          <VidioContainer/>
         </div>
     )
 }
