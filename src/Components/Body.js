@@ -1,15 +1,14 @@
 
 import SideBar from "./SideBar";
-import MainContainer from "./MainContainer";
+import { Outlet } from "react-router-dom";
 
 const Body = ()=>{
     return (
-        <div className="grid grid-flow-col">
+        <div className="flex" >
             
           <SideBar/>
-        
-            <MainContainer/>
-       
+           <Outlet/>  
+       {/* Outelet me ya to <MainContainer aayega ya WatchPage , accourding to appRouter */}
         </div>
     )
 }

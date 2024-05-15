@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { YouTube_Vidios_Api } from "../utils/Constants"
 import VidioCard from "./VidioCard";
+import { Link } from "react-router-dom";
 
 const VidioContainer = ()=>{
 
@@ -21,7 +22,8 @@ const VidioContainer = ()=>{
     return(
         <div className="flex flex-wrap">
            {
-              vidios.map((vidio)=> <VidioCard  key={vidio.id} info={vidio}/>)
+              vidios.map((vidio)=>
+              <Link to={"/watch?v="+vidio.id}> <VidioCard  key={vidio.id} info={vidio}/></Link>)
            }
           
         </div>
