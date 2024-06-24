@@ -13,7 +13,7 @@ const WatchPage = ()=>{
     },[])
      
     const [searchParams] = useSearchParams();
-    console.log(searchParams.get("v"));
+   // console.log(searchParams.get("v"));
 
     return (
         <div className="p-5">
@@ -24,7 +24,7 @@ const WatchPage = ()=>{
                frameBorder="0" 
                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullscreen></iframe>
+                allowFullScreen></iframe>
         </div>
     )
 }
