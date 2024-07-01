@@ -8,6 +8,8 @@ import { YOUTUBE_SEARCH_API } from "../utils/Constants";
 
    const [searchQuery, setSearchQuery] = useState("");
    //console.log(searchQuery)
+   const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
    useEffect(()=>{
        //console.log( searchQuery);
@@ -27,7 +29,8 @@ import { YOUTUBE_SEARCH_API } from "../utils/Constants";
 
       const data = await fetch(YOUTUBE_SEARCH_API+searchQuery);
       const json = await data.json();
-      console.log(json);
+       console.log(json);
+      setSuggestions(json[1]);
 
    }
      
@@ -58,9 +61,24 @@ import { YOUTUBE_SEARCH_API } from "../utils/Constants";
          <input type="text" className="border border-gray-500 w-1/2 rounded-l-full p-1 " 
            value={searchQuery}
            onChange={(e) => setSearchQuery(e.target.value)}
+          onFocus={() => setShowSuggestions(true)}
+          onBlur={() => setShowSuggestions(false)}
+
          />
          <button  className= "border bg-gray-300 border-gray-500 rounded-r-full p-1">&#x1F50D;</button>
-         </div>
+        {/* // </div> */}
+         {showSuggestions && (
+          <div className="fixed bg-white py-2 px-2 w-[28rem] shadow-lg rounded-lg border border-gray-100">
+            <ul>
+              {suggestions.map((s) => (
+                <li key={s} className="py-2 px-3 shadow-sm hover:bg-gray-100">
+                  🔍 {s}
+                </li> 
+              ))}
+            </ul>
+          </div>
+        )}
+       </div>
          <div className=" col-span-1">
 
           <img
