@@ -1,7 +1,35 @@
  
  import { useDispatch } from "react-redux"
+
+ import React, { useEffect, useState } from "react";
  import {toggleMenu} from "../utils/appSlice"
- const Head  = ()=>{
+import { YOUTUBE_SEARCH_API } from "../utils/Constants";
+ const Head  = ()=>{ 
+
+   const [searchQuery, setSearchQuery] = useState("");
+   //console.log(searchQuery)
+
+   useEffect(()=>{
+       //console.log( searchQuery);
+
+      // make an api call after every key press 
+      // but if the difference between 2 api calls is < 200 ms
+      // decline the api call 
+
+      const timer = setTimeout(()=>getSearchSuggestions() , 200);
+       
+      return()=>{
+         clearTimeout(timer);
+      } 
+   },[searchQuery])
+
+   const getSearchSuggestions = async()=>{
+
+      const data = await fetch(YOUTUBE_SEARCH_API+searchQuery);
+      const json = await data.json();
+      console.log(json);
+
+   }
      
       const dispatch = useDispatch();
      const handleToggelMenu = ()=>{
@@ -27,7 +55,10 @@
 
          <div className="col-span-10 my-3 px-16">
 
-         <input type="text" className="border border-gray-500 w-1/2 rounded-l-full p-1 "/>
+         <input type="text" className="border border-gray-500 w-1/2 rounded-l-full p-1 " 
+           value={searchQuery}
+           onChange={(e) => setSearchQuery(e.target.value)}
+         />
          <button  className= "border bg-gray-300 border-gray-500 rounded-r-full p-1">&#x1F50D;</button>
          </div>
          <div className=" col-span-1">
