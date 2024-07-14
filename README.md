@@ -1,4 +1,15 @@
-Debouncing:
+# Vidio vault
+
+A project build with React js , Tailwind css , Redux toolkit .
+It's a vidio streaming plateform , it is like a youtube clone .  
+
+## features - 
+
+  1. debouncing 
+  2. nested comments 
+  3. live chat
+
+ ### Debouncing:
 
 typing slow = 200ms typing fast = 30ms
 
@@ -17,7 +28,21 @@ Cache: time complexity tro search in array = O(n) time complexity tro search in 
 
 { i: ip: iph: iphone: }
 
-new Map();
+new Map();   // for cache
+We can implement least Recently used cache also ( LRU cache).  // cache
+
 
 // Youtubes debouncing time is very less , approx har keystrok par api kar deta h
-// Flipcarts debouncing time is a bit more then yt ,  km api call krta h  
+// Flipcarts debouncing time is a bit more then yt ,  km api call krta h 
+
+## n level nested comments 
+
+  List inside list  && recursion - 
+
+  ComementContainer 
+  
+  Comment - Component ( where we displayed  the icon ,  username , text )
+
+  CommentList - we used recursion in this component . 
+
+  CommentData - data , text , replies(itself a Comment)
