@@ -191,6 +191,9 @@ var nameList = [
     }
     return result;
   }
+
+
+  // just for developer use only , for learning useMemo , useCallback .....
   
   export const findPrime = (num) => {
     let i,
@@ -218,3 +221,5 @@ var nameList = [
     }
     return primes[num - 1];
   };
+ 
+  
