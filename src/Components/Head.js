@@ -5,7 +5,6 @@ import { YOUTUBE_SEARCH_API } from "../utils/Constants";
 import { cacheResults } from "../utils/searchSlice";
 
 const Head = () => {
-
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -14,10 +13,10 @@ const Head = () => {
   const dispatch = useDispatch();
 
   /**
-   *   searchCache = {
+   *  searchCache = {
    *     "iphone": ["iphone 11", "iphone 14"]
-   *   }
-   *   searchQuery = iphone
+   *  }
+   *  searchQuery = iphone
    */
 
   useEffect(() => {

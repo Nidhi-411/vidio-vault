@@ -1,39 +1,104 @@
+import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { AiFillHome } from "react-icons/ai";
+import {
+  BsBullseye,
+  BsCollectionPlay,
+  BsChevronRight,
+  BsPersonBoundingBox,
+  BsClockHistory,
+  BsMusicNoteList,
+  BsPlayBtn,
+  BsClock,
+  BsHandThumbsUp,
+  BsFire,
+  BsBagHeart,
+  BsMusicNote,
 
- 
- 
-const SideBar = ()=>{ 
+  BsNewspaper,
+  BsTrophy,
+  BsController,
+} from "react-icons/bs";
 
-    const isMenuOpen = useSelector((store)=> store.app.isMenuOpen)
+const Sidebar = () => {
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+  if (!isMenuOpen) return null;
 
-    if(!isMenuOpen) return null ; // early return
+  return (
+    <div className="  pl-3 w-52 font-sens text-xs">
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <AiFillHome className=" mt-1 mr-2 text-xl" />
+        <Link to="/">
+          <h1 className="text-[14px] font-bold ml-2 mt-[2px]">Home</h1>
+        </Link>
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <BsBullseye className=" mt-1 mr-2 text-xl" />
+        <h1 className="text-[14px] font-bold ml-2 mt-[2px]">Shorts</h1>
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <BsCollectionPlay className=" mt-1 mr-2 text-xl" />
+        <h1 className="text-[14px] font-bold ml-2 mt-[2px]">Subscription</h1>
+      </div>
+      <div className="flex pl-4 mt-5  hover:bg-gray-200 w-48 hover:rounded-lg p-1 pt-6  border-gray-300 border-t-[1.5px] ">
+        <h1 className="text-[14px] font-bold mr-2 mt-[2px]">You</h1>
+        <BsChevronRight className=" mt-1 ml-2 text-xl" />
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <BsPersonBoundingBox className=" mt-1 mr-2 text-xl" />
+        <h1 className="text-[14px] font-bold ml-2 mt-[2px]">Your Channel</h1>
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <BsClockHistory className=" mt-1 mr-2 text-xl" />
+        <h1 className="text-[14px] font-bold ml-2 mt-[2px]">History</h1>
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <BsMusicNoteList className=" mt-1 mr-2 text-xl" />
+        <h1 className="text-[14px] font-bold ml-2 mt-[2px]">Playlists</h1>
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <BsPlayBtn className=" mt-1 mr-2 text-xl" />
+        <h1 className="text-[14px] font-bold ml-2 mt-[2px]">Your Videos</h1>
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <BsClock className=" mt-1 mr-2 text-xl" />
+        <h1 className="text-[14px] font-bold ml-2 mt-[2px]">Watch Later</h1>
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <BsHandThumbsUp className=" mt-1 mr-2 text-xl" />
+        <h1 className="text-[14px] font-bold ml-2 mt-[2px]">Liked Videos</h1>
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 hover:rounded-lg p-1  border-gray-300 border-t-[1.5px] ">
+        <h1 className="text-[14px] font-bold mr-2 mt-[2px]">Explore</h1>
+        <BsChevronRight className=" mt-1 ml-2 text-xl" />
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <BsFire className=" mt-1 mr-2 text-xl" />
+        <h1 className="text-[14px] font-bold ml-2 mt-[2px]">Trending</h1>
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <BsBagHeart className=" mt-1 mr-2 text-xl" />
+        <h1 className="text-[14px] font-bold ml-2 mt-[2px]">Shopping</h1>
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <BsMusicNote className=" mt-1 mr-2 text-xl" />
+        <h1 className="text-[14px] font-bold ml-2 mt-[2px]">Music</h1>
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <BsController className=" mt-1 mr-2 text-xl" />
+        <h1 className="text-[14px] font-bold ml-2 mt-[2px]">Gaming</h1>
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <BsTrophy className=" mt-1 mr-2 text-xl" />
+        <h1 className="text-[14px] font-bold ml-2 mt-[2px]">Sports</h1>
+      </div>
+      <div className="flex pl-4 mt-2 hover:bg-gray-200 w-48 rounded-lg p-1">
+        <BsNewspaper className=" mt-1 mr-2 text-xl" />
+        <h1 className="text-[14px] font-bold ml-2 mt-[2px]">News</h1>
+      </div>
+    </div>
+  );
+};
 
-    return( 
-        
-        <div className="p-2 border border-l-gray-400 shadow-lg ">
-            
-            <ul className="pt-2">
-               <Link to={"/"}> <li>Home</li></Link>
-                <li>Shorts</li>
-                <li>Vidios</li>
-                <li>Live</li>
-            </ul>
-            <h1 className="font-bold pt-2">Sbbsciptions</h1>
-             <ul>
-                <li>Music</li>
-                <li>Sports</li>
-                <li>Gaming</li>
-                <li>Vidios</li>
-             </ul>
-             <h1 className="font-bold pt-2">Watch Later</h1>
-             <ul>
-                <li>Music</li>
-                <li>Sports</li>
-                <li>Gaming</li>
-                <li>Vidios</li>
-             </ul>
-         </div>
-    )
-}
-export default SideBar;
+export default Sidebar;
