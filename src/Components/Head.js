@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/Constants";
 import { cacheResults } from "../utils/searchSlice";
+import LogoMain from '../utils/logoMain1.png';
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -64,7 +65,8 @@ const Head = () => {
           <img
             className="h-8 mx-2"
             alt="youtube-logo"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png"
+            //src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2560px-YouTube_Logo_2017.svg.png"
+            src = {LogoMain}
           />
         </a>
       </div>
